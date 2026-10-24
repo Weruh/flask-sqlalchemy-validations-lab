@@ -1,5 +1,17 @@
 # Flask-SQLAlchemy Validations Lab
 
+## Implemented behavior
+
+`Author` validates a nonblank, unique name and a phone number containing exactly
+ten ASCII digits. `Post` requires at least 250 characters of content, a summary
+of no more than 250 characters when provided, `Fiction` or `Non-Fiction` as its
+category, and a title containing `Won't Believe`, `Secret`, `Top`, or `Guess`
+(case insensitive). Invalid values raise `ValueError` when assigned to a model.
+The database also enforces unique author names.
+
+After installing dependencies and creating the database as described below, run
+`pytest -x` from the repository root to check the validation rules.
+
 ## Scenario
 
 You’ve been brought in as a junior developer to help maintain a blog platform 
